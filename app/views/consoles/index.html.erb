@@ -1,0 +1,8 @@
+<h1>Index of Game Consoles</h1>
+
+<% @consoles.each do |console| %>
+
+<li>
+  <%=link_to console.name, console_path(console)%>
+</li>
+<%end%>

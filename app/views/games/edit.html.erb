@@ -1,0 +1,27 @@
+<h1>Edit Game</h1>
+
+<%=form_for @game do |f|%>
+  <%= f.label "Title"%>
+  <%= f.text_field "title"%>
+  <%= f.label "Price"%>
+  <%= f.number_field "price"%>
+  <%= f.label "Maturity Rating"%>
+  <%= f.select "maturity_rating", ["M", "E", "T"], prompt: true%>
+  <%= f.label "Console"%>
+  <%= f.collection_select :console_id, @consoles, :id, :name, prompt: true%>
+  <br>
+  <%= f.label "Genre"%>
+  <br>
+  <%= f.radio_button "genre", "Adventure"%>Adventure
+  <br>
+  <%= f.radio_button "genre", "Shooter"%>Shooter
+  <br>
+  <%= f.radio_button "genre", "Puzzle"%>Puzzle
+  <br>
+  <%= f.radio_button "genre", "Arcade"%>Arcade
+  <br>
+  <%= f.radio_button "genre", "Role Playing"%>Role Playing
+  <br>
+  <br>
+  <%= f.submit "Submit"%>
+<%end%>
