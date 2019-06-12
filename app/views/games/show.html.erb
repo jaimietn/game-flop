@@ -1,8 +1,15 @@
 <h1><%=@game.title%></h1>
-<h2>Console: <%=@game.console.name%></h2>
-<h2>Rating: <%=@game.maturity_rating%></h2>
-<h2>Price: $<%=@game.price%></h2>
-<h2>Genre: <%=@game.genre%></h2>
+
+<ul>
+  <li>Console: <%=@game.console.name%></li>
+  <li>Rating: <%=@game.maturity_rating%></li>
+  <li>Price: $<%=@game.price%></li>
+  <li>Genre: <%=@game.genre%></li>
+</ul>
 
 <%=button_to("Update Game", "/games/#{@game.id}/edit", method: "get")%>
 <%=button_to("Delete Game", "/games/#{@game.id}", method: "delete")%>
+<br>
+<%=link_to "See a Directory of Games", "/games"%>
+<br>
+<%=link_to "See a Directory of Game Consoles", "/consoles"%>

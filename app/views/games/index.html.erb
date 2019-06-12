@@ -1,9 +1,18 @@
 <h1>Games Index</h1>
-<ul>
 
+<%= form_tag("/games", method: :get) do %>
+  Search Game by name: <%= text_field_tag "search" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<ul>
 <%@games.each do |game|%>
 <li>
 <%=link_to game.title, game_path(game)%>
 </li>
 <%end%>
 </ul>
+
+<%=link_to "Add a New Game", "/games/new"%>
+<br>
+<%=link_to "See a Directory of Game Consoles", "/consoles"%>

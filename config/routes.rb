@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/games/:id/edit', to: "games#edit"
   patch '/games/:id', to: "games#update"
   post '/games', to: "games#create"
-  get '/games/:id', to: "games#show", as: "game"
+  get '/games/:id', to: "games#show", as: "game" #get show needs to be last get route
   delete '/games/:id', to: "games#destroy"
 
 end
